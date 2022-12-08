@@ -48,14 +48,14 @@ ingress:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: git-action.vinodtestingkubeace.tk
+    - host: git-action1.vinodtestingkubeace.tk
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls: 
    - secretName: git-action-tls
      hosts:
-       - git-action.vinodtestingkubeace.tk
+       - git-action1.vinodtestingkubeace.tk
 
 resources: 
   # We usually recommend not to specify default resources and to leave this as a conscious
