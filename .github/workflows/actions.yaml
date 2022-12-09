@@ -9,6 +9,11 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - id: commit
+        uses: pr-mpt/actions-commit-hash@v2
+        with:
+          commit: "${{ github.event.workflow_run.head_sha }}"
+          prefix: "sha-"
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -26,6 +31,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: shashankv1999/hello-python:latest
-      
+          tags: shashankv1999/hello-python:${{ steps.commit.outputs.short }}
       
