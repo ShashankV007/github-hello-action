@@ -29,7 +29,10 @@ jobs:
         with:
           push: true
           tags: shashankv1999/hello-python:${{ steps.commit.outputs.short }}
-      
+          
+      - name: Checkout
+        uses: actions/checkout@v2.5.0
+  
       - name: replace in values.yaml
         run: |
           pwd
